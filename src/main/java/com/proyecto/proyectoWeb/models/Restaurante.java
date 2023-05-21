@@ -27,12 +27,6 @@ public class Restaurante implements Serializable {
     @JdbcTypeCode(SqlTypes.CHAR)
     private String ubicacion;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name = "restaurante_horarios",
-            joinColumns = @JoinColumn(name = "restaurante_id"),
-            inverseJoinColumns = @JoinColumn(name = "horario_id"))
-    private List<Horario> horarios = new ArrayList<>();
-
     @ManyToOne
     @JoinColumn(name = "comida_id")
     private Comida comida;

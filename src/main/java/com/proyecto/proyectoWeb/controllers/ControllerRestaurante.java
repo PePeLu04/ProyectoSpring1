@@ -56,7 +56,6 @@ public class ControllerRestaurante {
             model.addAttribute("mensaje", mensaje);
             return "/error";
         }
-        List<Restaurante> Restaurante = propietario.getRestaurante();
 
         propietarioServices.save(propietario);
         return new RedirectView("/");

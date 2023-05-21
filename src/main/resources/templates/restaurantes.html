@@ -52,7 +52,6 @@
                 <tr>
                     <th scope="col">Nombre</th>
                     <th scope="col">Comida</th>
-                    <th scope="col">Horas</th>
                     <th scope="col">Propietarios</th>
                     <th scope="col">Acciones</th>
                 </tr>
@@ -66,7 +65,6 @@
                         </span>
                         <span th:unless="${restaurante.comida}">Sin comida</span>
                     </td>
-                    <td class="align-middle" th:text="horas"></td>
                     <td class="align-middle" th:text="Propietarios"></td>
                     <td class="align-middle">
                         <a th:href="@{/Restaurante/delete/{id}(id=${restaurante.id})}" class="btn btn-danger" role="button">Borrar</a>
