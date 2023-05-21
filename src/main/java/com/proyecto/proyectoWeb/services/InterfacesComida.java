@@ -8,8 +8,10 @@ import java.util.Optional;
 public interface InterfacesComida {
 
     public List<Comida> findAll();
+    void deleteComida(int id);
 
     Optional<Comida> findComidaByEvery(String name, String origen);
+    void editComida(int id, String nombre, String origen);
 
 
 }

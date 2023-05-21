@@ -8,7 +8,7 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
     <link rel="stylesheet"
-          href="/common.css">
+          href="/common1.css">
     <script type="text/javascript" src="/jquery-3.6.4.min.js"></script>
 </head>
 <body>
@@ -20,7 +20,7 @@
             <li class="menu-item">
                 <a href="#0">Propietarios</a>
                 <ol class="sub-menu">
-                    <li class="menu-item"><a href="/">Ver propietarios</a></li>
+                    <li class="menu-item"><a href="/propietarios">Ver propietarios</a></li>
                     <li class="menu-item"><a href="/propietarios/registro"><span>Registrar</span><span>propietario</span></a></li>
                 </ol>
             </li>
@@ -28,14 +28,14 @@
                 <a href="#0">Restaurante</a>
                 <ol class="sub-menu">
                     <li class="menu-item"><a href="/Restaurante">Ver restaurantes</a></li>
-                    <li class="menu-item"><a href="/Restaurante/nuevo">Añadir restaurante</a></li>
+                    <li class="menu-item"><a href="/Restaurante/nuevo">Insertar restaurante</a></li>
                 </ol>
             </li>
             <li class="menu-item">
                 <a href="#0">Comidas</a>
                 <ol class="sub-menu">
                     <li class="menu-item"><a href="/Comidas">Ver comidas</a></li>
-                    <li class="menu-item"><a href="/Comidas/nuevo">Añadir comida</a></li>
+                    <li class="menu-item"><a href="/Comidas/nuevo">Insertar comida</a></li>
                 </ol>
             </li>
         </ol>
@@ -43,7 +43,7 @@
     <div class="table-responsive bg-text">
 
         <div class="card-header text-white">
-            <h1>TODOS LOS PROPIETARIOS</h1>
+            <h1>PROPIETARIOS</h1>
         </div>
 
         <div class="card-body">
@@ -54,7 +54,7 @@
                     <th scope="col">Apellido</th>
                     <th scope="col">E-mail</th>
                     <th scope="col">Restaurantes</th>
-                    <th scope="col">Acciones</th>
+                    <th scope="col">Editar</th>
                 </tr>
                 </thead>
                 <tbody class="table-dark">
@@ -74,13 +74,12 @@
                     <td class="align-middle">
                         <a th:href="@{/propietarios/delete/{id}(id=${Propietario.id})}" class="btn btn-danger" role="button">Borrar</a>
                         <a th:href="@{/propietarios/edit/{id}(id=${Propietario.id})}" class="btn btn-primary" role="button">Editar</a>
-                        <a th:href="@{/propietarios/Restaurantes/{id}(id=${Propietario.id})}" class="btn btn-primary" role="button">Añadir a restaurantes</a>
+                        <a th:href="@{/propietarios/Restaurantes/{id}(id=${Propietario.id})}" class="btn btn-primary" role="button">Insertar a restaurantes</a>
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
-        <a class="btn btn-primary" href="/propietarios/registro" role="button">Registrar propietarios</a>
     </div>
 </div>
 

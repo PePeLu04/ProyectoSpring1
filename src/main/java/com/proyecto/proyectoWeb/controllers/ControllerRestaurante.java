@@ -35,9 +35,7 @@ public class ControllerRestaurante {
     @GetMapping("/")
     public String home(Model model) {
 
-        List<Propietario> propietario = propietarioServices.getAllPropietarios();
-        model.addAttribute("propietarios", propietario);
-        return "propietarios";
+        return "welcome";
     }
 
     @GetMapping("/propietarios/registro")
@@ -49,10 +47,10 @@ public class ControllerRestaurante {
     @PostMapping("/propietarios/registro")
     public Object savePropietario(@ModelAttribute("propietario") Propietario propietario, Model model) {
         String mensaje = new String("null");
-        if(!propietario.email.contains(String.valueOf("@"))){
+        if(propietario.email.indexOf(String.valueOf("@")) == -1){
             mensaje = "Email erróneo";
         }
-        if(!mensaje.equals("null")){
+        if(!mensaje.equals("(:")){
             model.addAttribute("mensaje", mensaje);
             return "/error";
         }
@@ -82,10 +80,10 @@ public class ControllerRestaurante {
     @PostMapping("/propietarios/edit/{id}")
     public Object savePropietario(@ModelAttribute("propietario") Propietario propietario, @PathVariable int id, Model model) {
         String mensaje = new String("null");
-        if(!propietario.email.contains(String.valueOf("@"))){
+        if(propietario.email.indexOf(String.valueOf("@")) == -1){
             mensaje = "Email erróneo";
         }
-        if(!mensaje.equals("null")){
+        if(!mensaje.equals("(:")){
             model.addAttribute("mensaje", mensaje);
             return "/error";
         }
@@ -104,20 +102,6 @@ public class ControllerRestaurante {
         model.addAttribute("propietario", propietario);
         return ("editar");
     }
-
-    @GetMapping("/welcome/{nombre}")
-    public String welcome(Model model, @PathVariable String nombre){
-        model.addAttribute("persona", nombre);
-        return "welcome";
-    }
-
-    @GetMapping("/welcome")
-    public String welcomeDefault(Model model){
-        model.addAttribute("persona", "desconocido");
-        return "welcome";
-    }
-
-
     @GetMapping("/Comidas")
     public String ComidasInicio(Model model){
         model.addAttribute("comidas", comidaServices.findAll());
@@ -131,12 +115,32 @@ public class ControllerRestaurante {
         return "registroComida";
     }
 
+    @GetMapping("/Comidas/delete/{id}")
+    public RedirectView deleteComida(@PathVariable int id){
+        comidaServices.deleteComida(id);
+        return new RedirectView("/");
+
+    }
+
     @PostMapping("/Comidas/nuevo")
     public RedirectView guardarComida(@ModelAttribute("Comida") Comida comida, Model model) {
         //Aqui se debería hacer control por si ya existe
         comidaServices.save(comida);
         return new RedirectView("/comidas");
 
+    }
+
+
+    @PostMapping("/Comidas/edit/{id}")
+    public Object saveComida(@ModelAttribute("propietario") Comida comida, @PathVariable int id, Model model) {
+        String mensaje = new String("null");
+        if(!mensaje.equals("null")){
+            model.addAttribute("mensaje", mensaje);
+            return "/error";
+        }
+        comida.setId(id);
+        comidaServices.save(comida);
+        return new RedirectView("/");
     }
 
     //A partir de aquí las rutas Restaurante

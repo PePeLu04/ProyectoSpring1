@@ -19,6 +19,8 @@ public class ServicesComida implements InterfacesComida {
         this.repositoryComida = repositoryComida;
         this.repositoryRestaurante = repositoryRestaurante;
     }
+    @Override
+    public void deleteComida(int id){ repositoryComida.deleteComida(id); }
 
 
     @Override
@@ -44,5 +46,9 @@ public class ServicesComida implements InterfacesComida {
             repositoryRestaurante.actualizarFKComida(restaurante.getId(), ComidaActual.getId());
         }
     }
+
+    @Override
+    public void editComida(int id, String nombre, String origen){ repositoryComida.editComida(id, nombre, origen); }
+
 
 }

@@ -4,7 +4,7 @@ body, html {
 
 .bg-image {
   /* Imagen */
-  background-image: url("/wallpaper.jpg");
+  background-image: url("/wallpaper1.png");
 
   /* Efecto blur */
   filter: blur(6px) brightness(0.5);
@@ -34,35 +34,37 @@ body, html {
 }
 
 .text-bg-head{
-  background: #F67280;
-  color: white;
+  background: #72a7f6;
+  color: #100a0a;
 }
 
 .box-footer{
   margin-top: 2em;
 }
-
 /*Menu*/
 .menu {
-  background: #F67280;
+  background: #4CAF50; /* Cambié el color de fondo a verde */
   height: 4rem;
   margin-bottom: 1rem;
-
 }
+
 .menu ol {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
 }
+
 .menu > ol {
   max-width: 1000px;
   padding: 0 2rem;
   display: flex;
 }
+
 .menu > ol > .menu-item {
   flex: 1;
   padding: 0.75rem 0;
 }
+
 .menu > ol > .menu-item:after {
   content: "";
   position: absolute;
@@ -71,49 +73,58 @@ body, html {
   border-radius: 50%;
   bottom: 5px;
   left: calc(50% - 2px);
-  background: #FECEAB;
+  background: #FF5722; /* Cambié el color del punto a naranja */
   will-change: transform;
   transform: scale(0);
   transition: transform 0.2s ease;
 }
+
 .menu > ol > .menu-item:hover:after {
   transform: scale(1);
 }
+
 .menu-item {
   position: relative;
   line-height: 2.5rem;
   text-align: center;
 }
+
 .menu-item a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  color: #FFF;
+  color: #d21b1b;
 }
+
 .sub-menu .menu-item {
   padding: 0.75rem 0;
-  background: #F67280;
+  background: #72a7f6; /* Cambié el color de fondo a rosa */
   opacity: 0;
   transform-origin: bottom;
   animation: enter 0.2s ease forwards;
   overflow-wrap: break-word;
 }
+
 .sub-menu .menu-item:nth-child(1) {
   animation-duration: 0.2s;
   animation-delay: 0s;
 }
+
 .sub-menu .menu-item:nth-child(2) {
   animation-duration: 0.3s;
   animation-delay: 0.1s;
 }
+
 .sub-menu .menu-item:nth-child(3) {
   animation-duration: 0.4s;
   animation-delay: 0.2s;
 }
+
 .sub-menu .menu-item:hover {
-  background: #F8B195;
+  background: #595657; /* Cambié el color de fondo al pasar el mouse a un tono más oscuro de rosa */
 }
+
 .sub-menu .menu-item a {
   padding: 0 0.75rem;
   display: flex;
@@ -124,7 +135,7 @@ body, html {
 
 @media screen and (max-width: 600px) {
   .sub-menu .menu-item {
-    background: #C06C84;
+    background: #020509; /* Cambié el color de fondo a azul claro */
   }
 }
 
@@ -139,12 +150,12 @@ body, html {
     right: 1rem;
     width: 30px;
     height: 4px;
-    background: #FFF;
-    box-shadow: 0 10px #FFF, 0 -10px #FFF;
+    background: #000;
+    box-shadow: 0 10px #000, 0 -10px #000; /* Cambié el color y sombras del elemento ::after */
   }
   .menu > ol {
     display: none;
-    background: #F67280;
+    background: #FFD700; /* Cambié el color de fondo a dorado */
     flex-direction: column;
     justify-content: center;
     height: 100vh;
@@ -196,8 +207,8 @@ body, html {
   left: 0;
   display: none;
   z-index: 1;
-
 }
+
 .menu-item:hover > .sub-menu {
   display: block;
 }
@@ -213,9 +224,9 @@ body, html {
 
 html, body {
   font-size: 16px;
-  font-family: "Fira Mono", monospace;
+  font-family: "Arial", sans-serif; /* Cambié la fuente a Arial y sans-serif */
   margin: 0;
-  background: #2A363B;
+  background: #008080; /* Cambié el color de fondo a verde azulado */
 }
 
 * {
@@ -247,3 +258,4 @@ a {
     opacity: 1;
   }
 }
+
