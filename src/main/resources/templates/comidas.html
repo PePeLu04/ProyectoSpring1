@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Comidas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="/common.css">
+    <script type="text/javascript" src="/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<div class="wrapper bg-dark">
+    <!--Menu-->
+    <nav class="menu">
+        <ol>
+            <li class="menu-item"><a href="/">Inicio</a></li>
+            <li class="menu-item">
+                <a href="#0">Propietarios</a>
+                <ol class="sub-menu">
+                    <li class="menu-item"><a href="/">Ver propietarios</a></li>
+                    <li class="menu-item"><a href="/propietarios/registro"><span>Registrar</span><span>propietario</span></a></li>
+                </ol>
+            </li>
+            <li class="menu-item">
+                <a href="#0">Restaurantes</a>
+                <ol class="sub-menu">
+                    <li class="menu-item"><a href="/Restaurantes">Ver restaurantes</a></li>
+                    <li class="menu-item"><a href="/Restaurantes/nuevo">Añadir restaurante</a></li>
+                </ol>
+            </li>
+            <li class="menu-item">
+                <a href="#0">Comidas</a>
+                <ol class="sub-menu">
+                    <li class="menu-item"><a href="/Comidas">Ver comidas</a></li>
+                    <li class="menu-item"><a href="/Comidas/nuevo">Añadir comida</a></li>
+                </ol>
+            </li>
+        </ol>
+    </nav>
+    <div class="table-responsive bg-text">
+
+        <div class="card-header text-white">
+            <h1>TODAS LAS COMIDAS</h1>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Restaurantes</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody class="table-dark">
+                <tr th:each="comida: ${comidas}">
+                    <td class="align-middle" th:text="${comida.nombre}"></td>
+                    <td class="align-middle" th:text="${comida.origen}"></td>
+                    <td class="align-middle">
+                                <ul>
+                                    <th:block th:each="restaurante: ${comida.restaurante}">
+                                        <li th:text="${restaurante.nombre}"></li>
+                                    </th:block>
+                                </ul>
+                    </td>
+                    <td class="align-middle">
+                        <a th:href="@{/Comidas/delete/{id}(id=${comida.id})}" class="btn btn-danger" role="button">Borrar</a>
+                        <a th:href="@{/Comidas/edit/{id}(id=${comida.id})}" class="btn btn-primary" role="button">Editar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <a class="btn btn-primary" href="/Comidas/nuevo" role="button">Registrar comida</a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+<script src="/common.js"></script>
+</body>
+</html>
