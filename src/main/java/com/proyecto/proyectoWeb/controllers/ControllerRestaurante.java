@@ -24,7 +24,6 @@ public class ControllerRestaurante {
     @Autowired
     private final ServicesComida comidaServices;
 
-    private List<Restaurante> ListaRestaurante = new ArrayList<>();
 
     public ControllerRestaurante( ServicesPropietario propietarioServices, ServicesRestaurante restauranteServices, ServicesComida comidaServices){
 
@@ -35,7 +34,7 @@ public class ControllerRestaurante {
     @GetMapping("/")
     public String home(Model model) {
 
-        return "welcome";
+        return "template";
     }
 
     @GetMapping("/propietarios/registro")
@@ -59,6 +58,11 @@ public class ControllerRestaurante {
         return new RedirectView("/");
     }
 
+    @GetMapping("/propietarios")
+    public String Propietario(Model model){
+        model.addAttribute("propietarios", propietarioServices.getAllPropietarios());
+        return "propietarios";
+    }
 
     @GetMapping("/propietarios/delete/{id}")
     public RedirectView deletePropietario(@PathVariable int id){
