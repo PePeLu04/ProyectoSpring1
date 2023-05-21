@@ -31,6 +31,10 @@ public class Restaurante implements Serializable {
     @JoinColumn(name = "comida_id")
     private Comida comida;
 
+    @ManyToOne
+    @JoinColumn(name = "propietario_id")
+    private Propietario propietario;
+
 
 
 }
