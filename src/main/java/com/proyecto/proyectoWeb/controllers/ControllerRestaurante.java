@@ -34,7 +34,7 @@ public class ControllerRestaurante {
     @GetMapping("/")
     public String home(Model model) {
 
-        return "template";
+        return "welcome";
     }
 
     @GetMapping("/propietarios/registro")
