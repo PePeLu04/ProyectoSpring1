@@ -6,13 +6,9 @@ body, html {
   /* Imagen */
   background-image: url("/wallpaper1.png");
 
-  /* Efecto blur */
-  filter: blur(6px) brightness(0.5);
-  -webkit-filter: blur(6px) brightness(0.5);
 
   height: 100%;
 
-  /* Colocación imagen */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -43,7 +39,7 @@ body, html {
 }
 /*Menu*/
 .menu {
-  background: #4CAF50; /* Cambié el color de fondo a verde */
+  background: #4CAF50;
   height: 4rem;
   margin-bottom: 1rem;
 }
@@ -73,7 +69,7 @@ body, html {
   border-radius: 50%;
   bottom: 5px;
   left: calc(50% - 2px);
-  background: #FF5722; /* Cambié el color del punto a naranja */
+  background: #FF5722;
   will-change: transform;
   transform: scale(0);
   transition: transform 0.2s ease;
@@ -99,7 +95,7 @@ body, html {
 
 .sub-menu .menu-item {
   padding: 0.75rem 0;
-  background: #72a7f6; /* Cambié el color de fondo a rosa */
+  background: #72a7f6;
   opacity: 0;
   transform-origin: bottom;
   animation: enter 0.2s ease forwards;
@@ -107,22 +103,22 @@ body, html {
 }
 
 .sub-menu .menu-item:nth-child(1) {
-  animation-duration: 0.2s;
+  animation-duration: 0s;
   animation-delay: 0s;
 }
 
 .sub-menu .menu-item:nth-child(2) {
-  animation-duration: 0.3s;
-  animation-delay: 0.1s;
+  animation-duration: 0.0s;
+  animation-delay: 0.0s;
 }
 
 .sub-menu .menu-item:nth-child(3) {
-  animation-duration: 0.4s;
-  animation-delay: 0.2s;
+  animation-duration: 0.0s;
+  animation-delay: 0.0s;
 }
 
 .sub-menu .menu-item:hover {
-  background: #595657; /* Cambié el color de fondo al pasar el mouse a un tono más oscuro de rosa */
+  background: #595657;
 }
 
 .sub-menu .menu-item a {
@@ -135,7 +131,7 @@ body, html {
 
 @media screen and (max-width: 600px) {
   .sub-menu .menu-item {
-    background: #020509; /* Cambié el color de fondo a azul claro */
+    background: #020509;
   }
 }
 
@@ -151,11 +147,11 @@ body, html {
     width: 30px;
     height: 4px;
     background: #000;
-    box-shadow: 0 10px #000, 0 -10px #000; /* Cambié el color y sombras del elemento ::after */
+    box-shadow: 0 10px #000, 0 -10px #000;
   }
   .menu > ol {
     display: none;
-    background: #FFD700; /* Cambié el color de fondo a dorado */
+    background: #FFD700;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
@@ -224,9 +220,9 @@ body, html {
 
 html, body {
   font-size: 16px;
-  font-family: "Arial", sans-serif; /* Cambié la fuente a Arial y sans-serif */
+  font-family: "Arial", sans-serif;
   margin: 0;
-  background: #008080; /* Cambié el color de fondo a verde azulado */
+  background: #008080;
 }
 
 * {
